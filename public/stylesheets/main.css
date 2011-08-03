@@ -1,0 +1,480 @@
+#container
+{
+	margin: 1em auto;
+	width: 650px;
+	text-align: left;
+	font-family: Verdana, sans-serif;
+}
+
+#header
+{
+	height: 64px;
+	background-image: url(/images/header.jpg);
+	background-repeat: no-repeat;
+}
+
+#footer {
+	height: 53px;
+	width: 650px;
+	margin-bottom: 5px;
+}
+
+#footerleft 
+{
+	background-image: url(/images/footerleft.jpg);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 53px;
+	float: left;
+}	
+#footermiddle1
+{
+	background-image: url(/images/footermiddle.jpg);
+	background-repeat: repeat-x;
+	width: 405px;
+	height: 53px;
+	float: left;
+	text-align: right;
+	font: 70% arial;
+	color: #d81526;
+}
+
+#footermiddle1 p {
+	width:300px;
+	margin-top:13px;
+	margin-left:100px;
+}
+
+#footermiddle2
+{
+	background-image: url(/images/footermiddle.jpg);
+	background-repeat: repeat-x;
+	width: 205px;
+	height: 53px;
+	float: left;
+	color: #d81526;
+	text-align: center;
+}
+
+#footermiddle2 p {
+	margin-top:10px;
+}
+
+#footerright
+{
+	background-image: url(/images/footerright.jpg);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 53px;
+	float: left;
+}
+
+.inline-button {
+   _width:12em;
+   font: bold 65%/1 Verdana, sans-serif;
+   padding: 0.1em 0;
+    _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+
+.inline-button em {
+   _width:1em; _cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+
+.inline-button span {
+   _width:1em; _cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+
+.inline-button:hover span {
+   background: gray;
+   color: white;
+   }
+
+.orange { background: orange; color: white }
+.orange em { background: white; color: #c60 }
+.orange span { background: orange; color: white }
+
+.blue { background: #06c; color: white }
+.blue em { background: white; color: #06c }
+.blue span { background: #06c; color: white }
+
+.green { background: green; color: white }
+.green em { background: white; color: green }
+.green span { background: green; color: white }
+
+.red { background: red; color:white }
+.red em { background: white; color:red }
+.red span { background: red; color: white }
+
+.aktualizacja {
+	font: 70% arial, helvetica, sans-serif;
+}
+
+.aktualizacja .label{
+	font-weight: bold;
+}
+
+#contentsbottomw {
+	background-image: url(/images/contentsbottom.jpg);
+	background-repeat: no-repeat;
+	height: 11px;
+	margin-bottom: 3px;
+}
+
+#contentstopw {
+	background-image: url(/images/contentstop.jpg);
+	background-repeat: no-repeat;
+	height: 11px;
+	margin-top: 3px;
+}
+
+#contents {
+	height: auto;
+	background-image: url(/images/contents.jpg);
+	background-repeat: repeat-y;
+	background-color: white;
+	font: 85% arial, helvetica, sans-serif;
+	padding: 2px 20px;
+}
+
+#tekst {
+	padding: 10px 0px 10px 10px;	
+	width: 300px;
+	font: 85% arial, helvetica, sans-serif;
+	float: left;
+}
+
+#podpis {
+	font: 85% arial, helvetica, sans-serif;
+	text-align: right;
+}
+
+#facjata {
+	width: 280px;
+	padding: 0px 10px 0px 0px;
+	text-align: right;
+	float: right;
+}
+
+
+a, a:visited {
+	color: #171914;
+	background-color: transparent;
+}
+
+a:hover, a:active
+{
+	color: #fff;
+	background-color: #171914;
+}
+
+div.onenews {
+	text-align: justify;
+	margin-left: 10px;
+	width: 610px;
+}
+
+div.onenews p {
+	padding: 0px 0px 5px 0px;
+	text-indent: 0.5cm;
+}
+
+div.onenews h4 {
+	padding: 5px 0 5px 0;
+}
+
+div.more {
+	text-align: right;
+}
+
+td {
+	padding: 2px;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 10px;
+	list-style: none;
+}
+
+ul li {
+	padding-left: 10px;
+	background-image: url(/images/bullet.gif);
+	background-repeat: no-repeat;
+	background-position: 0 .5em;
+}
+
+#comments input {
+    border: 1px solid black;
+    background: #dbe1d8;
+}
+
+#comments textarea {
+    border: 1px solid black;
+    background: #dbe1d8;
+	margin-bottom: 6px;
+}
+
+#comments label {
+    display: block;
+    width: 150px;
+    float: left;
+    margin: 2px 4px 6px 4px;
+    text-align: right;
+}
+
+#comments br { clear: left; }
+
+#article h1 {
+	font: 130% arial, helvetica, sans-serif;
+	margin-bottom: 10px;
+}
+
+#article h4 {
+	padding: 5px 0 5px 0;
+}
+
+#article p {
+	padding: 0px 0px 5px 0px;
+	text-indent: 0.5cm;
+	text-align: justify;
+}
+
+p {
+	padding: 0px 0px 5px 0px;
+}
+
+div.comment {
+	margin-bottom: 10px;
+	border: 1px solid black;
+    background: #dbe1d8;
+	padding: 5px;
+}
+
+a.img, a.img:visited, a.img:hover {
+	background-color: transparent;
+	float: left;
+}
+
+.imgdescnolink img {
+	background-color: transparent;
+	float: left;
+}
+
+a.imgl, a.imgl:visited, a.imgl:hover {
+	background-color: transparent;
+}
+
+a img, a:visited img, a:hover img {
+	background-color: transparent;
+}
+
+img {
+	border: 1px solid black;
+}
+
+img.noframe {
+	border: none;
+}
+
+#comment_captcha {
+	margin-bottom: 6px;
+}
+
+div.center {
+	text-align: center;
+}
+
+div.center img {
+	border: 1px solid black;
+	padding: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.imgdesc img {
+	float: left;
+	margin: 2px 10px 2px 0;
+}
+
+div.imgset {
+        width: 600px;
+        margin: 10px auto;
+        padding: 10px;
+		text-align: center;
+}
+
+pre {
+        border: dashed 1px black;
+        background-color: #e5ede2;
+        padding: 18px 10px;
+		margin: 2px;
+		width: 575px;	
+		overflow: auto;
+		overflow-Y: hidden;
+		margin-bottom: 10px;
+}
+
+#article p.warn {
+        border: dashed 1px #db1225;
+        background-color: #ffb29e;
+        color: #db1225;
+        padding: 10px;
+}
+
+
+.navcat {
+        margin-top: 3px;
+}
+
+.navcat a {
+        background: transparent url('/images/leftnav.gif') no-repeat top left;
+        display: block;
+        float: left;
+        font: bold 13px Verdana, Trebuchet MS;
+        line-height: 14px;
+        height: 24px;
+        padding-left: 14px;
+        text-decoration: none;
+        margin: 2px;
+}
+
+.navcat a:link, .nav a:visited, .nav a:active {
+        color: black;
+}
+
+.navcat a span {
+        background: transparent url('/images/rightnav.gif') no-repeat top right;
+        display: block;
+        padding: 4px 15px 6px 0;
+	white-space: nowrap;
+}
+
+.navcat a.current {
+        background-position: 0% -48px;
+}
+
+.navcat a.current span{
+        background-position: 100% -48px;
+        color: white;
+}
+
+.navcat a:hover span {
+        background-position: 100% -24px;
+        color: white;
+}
+
+.navcat a:hover {
+        background-position: 0% -24px;
+	background-color:white;
+}
+
+.navart {
+        margin-top: 3px;
+}
+
+.navart a {
+        background: transparent url('/images/leftnav.gif') no-repeat top left;
+        display: block;
+        float: right;
+        font: bold 13px Verdana, Trebuchet MS;
+        line-height: 14px;
+        height: 24px;
+        padding-left: 14px;
+        text-decoration: none;
+        margin: 2px;
+}
+
+.navart a:link, .nav a:visited, .nav a:active {
+        color: black;
+}
+
+.navart a span {
+        background: transparent url('/images/rightnav.gif') no-repeat top right;
+        display: block;
+        padding: 4px 15px 6px 0;
+	white-space: nowrap;
+}
+
+.navart a.current {
+        background-position: 0% -48px;
+}
+
+.navart a.current span{
+        background-position: 100% -48px;
+        color: white;
+}
+
+.navart a:hover span {
+        background-position: 100% -24px;
+        color: white;
+}
+
+.navart a:hover {
+        background-position: 0% -24px;
+	background-color:white;
+}
+
+div.imgdesc {
+	margin-bottom: 5px;
+}
+
+div.clearpicture {
+	clear: left;
+	margin-bottom: 5px;
+}
+
+div.error {
+        border: dashed 1px #db1225;
+        background-color: #ffb29e;
+        color: #db1225;
+        padding: 10px;
+		text-align: center;
+		margin-bottom: 10px;
+}
+
+div.notice {
+        border: dashed 1px black;
+        background-color: #e5ede2;
+        color: black;
+        padding: 10px;
+		text-align: center;
+		margin-bottom: 10px;
+}
+
+div.vimeo {
+	text-align: center;
+}
+
+div.vimeo embed {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div.plakat {
+	border-style:dotted;
+	border-width:1px; 
+	padding: 10px; 
+	margin:10px;
+	background: #dbe1d8;
+}
