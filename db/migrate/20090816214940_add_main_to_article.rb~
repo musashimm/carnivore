@@ -1,0 +1,9 @@
+class AddMainToArticle < ActiveRecord::Migration
+  def self.up
+    add_column :articles, :main, :boolean
+  end
+
+  def self.down
+    remove_column :articles, :main
+  end
+end
