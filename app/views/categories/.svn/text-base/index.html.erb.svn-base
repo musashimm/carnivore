@@ -1,0 +1,29 @@
+<% content_for :title do -%>
+todryk.pl - Lista wątków
+<% end -%>
+
+<p>
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Artykuły', articles_path %>
+<%= link_to 'Nowy artykuł', new_article_path %>
+<%= link_to 'Nowy wątek', new_category_path %>
+</p>
+
+<h1>Wątki</h1>
+
+<% if @categories.size.zero? %>
+Brak zdfiniowanych wątków.
+<% else %>
+<table>
+
+<% for category in @categories %>
+  <tr>
+    <td><%= h category.name %></td>
+    <td><%= link_to 'Edytuj', edit_category_path(category) %></td>
+    <td><%= link_to 'Usuń', category, :confirm => 'Czy aby na pewno?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+

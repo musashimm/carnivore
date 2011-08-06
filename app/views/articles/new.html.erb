@@ -1,0 +1,36 @@
+<% content_for :title do -%>
+todryk.pl - Nowy artykuł
+<% end -%>
+
+<p>
+<%= link_to 'Lista artykułów', articles_path %>
+</p>
+
+<% form_for(@article) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label "Tytuł"%>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label "Permalink" %>
+    <%= f.text_field :permalink %>
+    <%= f.label "Wątek" %>
+     <%= select("article", "category_id", @categories.collect {|p| [ p.name, p.id ] }) %>
+ </p>
+ <p>
+	 <%= f.label "Strona główna" %><%= f.check_box :main %><%= f.label "Publikowany" %><%= f.check_box :published %><%= f.label "Do skomentowania" %><%= f.check_box :comentable %><%= f.submit "Aktualizacja" %>
+  </p>
+  <p>
+    <%= f.text_area :news ,:cols => 80, :rows => 2 %>
+  </p>
+  <p>
+    <%= f.text_field :keywords, :size => 60 %>
+  </p>
+  <p>
+    <%= f.text_area :body ,:cols => 80, :rows =>100%>
+  </p>
+  <p>
+	<%= f.submit "Aktualizacja" %>
+  </p>
+<% end %>

@@ -1,0 +1,4 @@
+<div class="onenews"><h4>Wątek <%=h news.category.name %> - <%= news.updated_at.strftime("%Y-%m-%d") %></h4>
+<p><%= news.news %></p>
+<div class="more"><%= link_to "Czytaj więcej...", :controller=>news.permalink %></div>
+</div>

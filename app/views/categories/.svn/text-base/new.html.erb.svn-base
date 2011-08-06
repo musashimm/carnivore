@@ -1,0 +1,22 @@
+<% content_for :title do -%>
+todryk.pl - Nowy wątek
+<% end -%>
+
+<p>
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Artykuły', articles_path %>
+<%= link_to 'Nowy artykuł', new_article_path %>
+<%= link_to 'Wątki', categories_path %>
+</p>
+
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Nazwa " %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Utwórz" %>
+  </p>
+<% end %>

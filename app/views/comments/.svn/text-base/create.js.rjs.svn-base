@@ -1,0 +1,4 @@
+page.replace_html 'no_comments',''
+page.insert_html :bottom, :users_comments, :partial => @comment
+page[@comment].visual_effect :highlight
+page[:new_comment].reset

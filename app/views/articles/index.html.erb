@@ -1,0 +1,70 @@
+<% content_for :title do -%>
+<%= $defaults["portal_name"] %> - Lista artykułów
+<% end -%>
+
+<p>
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Nowy artykuł', new_article_path %>
+<%= link_to 'Wątki', categories_path %>
+<%= link_to 'Nowy wątek', new_category_path %>
+</p>
+
+<h2>Artykuły opublikowane (<%= @articlesp.size %>)</h2>
+<% if @articlesp.size.zero? %>
+Brak opublikowanych artykułów.
+<% else %>
+<table>
+  <tr>
+    <th>Tytuł</th>
+    <th>Wątek</th>
+	<th>Kom</th>
+	<th>LK</th>
+  </tr>
+
+<% for article in @articlesp %>
+  <tr>
+	<td>
+    <% if article.main == true %>
+		<%= link_to "<< #{article.title} >>", :controller=>article.permalink  %>
+	<% else %>
+		<%= link_to article.title, :controller=>article.permalink  %>
+	<% end %>
+	</td>
+	<td><%=h article.category.name %></td>
+	<td><%=h article.comentable %></td>
+	<td><%=h article.comments.count %></td>
+    <td><%= link_to 'Pokaż', "/#{article.permalink}" %></td>
+    <td><%= link_to 'Edytuj', edit_article_path(article) %></td>
+    <td><%= link_to 'Usuń', article, :confirm => 'Czy aby na pewno?', :method => :delete %></td>
+	<td><%= link_to 'Usuń kom.',:controller=>'articles',:action=>'delcom',:id=>article %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br /><br />
+<h2>Artykuły nieopublikowane (<%= @articlesu.size %>)</h2>
+<% if @articlesu.size.zero? %>
+Brak nieopublikowanych artykułów.
+<% else %>
+<table>
+  <tr>
+    <th>Tytuł</th>
+    <th>Wątek</th>
+	<th>Kom</th>
+	<th>LK</th>
+  </tr>
+
+<% for article in @articlesu %>
+  <tr>
+    <td><%= link_to h(article.title), :controller=>article.permalink  %></td>
+    <td><%=h article.category.name %></td>
+	<td><%=h article.comentable %></td>
+	<td><%=h article.comments.count %></td>
+    <td><%= link_to 'Pokaż',"/#{article.permalink}" %></td>
+    <td><%= link_to 'Edytuj', edit_article_path(article) %></td>
+    <td><%= link_to 'Usuń', article, :confirm => 'Czy aby na pewno?', :method => :delete %></td>
+	<td><%= link_to 'Usuń komentarze', :controller=>'articles',:action=>'delcom',:id=>article %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>

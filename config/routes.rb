@@ -1,4 +1,18 @@
 CarnivoreNew::Application.routes.draw do
+
+  match 'login' => 'admin#login', :as => :login
+  match 'logout' => 'admin#logout', :as => :logout
+  match '/' => 'articles#main'
+  match '/index.php' => 'articles#catcher'
+  match '/main.:format' => 'articles#main'
+  match '/simple_captcha/:action' => 'simple_captcha#index', :as => :simple_captcha
+  resources :categories
+  match '/admin' => 'articles#index'
+  resources :articles
+  match ':permalink' => 'articles#show'
+  match '/:controller(/:action(/:id))'
+  match '*path' => 'articles#catcher'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +62,7 @@ CarnivoreNew::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "articles#index"
 
   # See how all your routes lay out with "rake routes"
 

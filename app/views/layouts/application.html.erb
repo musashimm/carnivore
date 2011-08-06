@@ -1,14 +1,85 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+			<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" >
 <head>
-  <title>CarnivoreNew</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+<title><%= yield :title -%></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="verify-v1" content="4FvzDuROPmB8N21lthjWoeFUKeHV/6QoU9LyGteF+S0=" />
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<%= auto_discovery_link_tag :atom, "/main.atom" %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag "scriptaculous.js?load=effects,builder" %>
+<%= javascript_include_tag "lightbox" %>
+<%= stylesheet_link_tag 'reset' %>
+<%= stylesheet_link_tag 'main' %>
+<%= stylesheet_link_tag 'lightbox' %>
+<%= yield :head -%>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7412687-3");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
 </head>
 <body>
+<div id="container">
+<% if flash[:error] %>
+      <div class="error"><%= flash[:error] %></div>
+<% end %>
+<% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<div id="header">
+</div>
 
-<%= yield %>
+<%= yield :navigation %>
 
+<div id="contentstopw">
+<div id="contentstop">
+</div>
+</div>
+
+<div id="contents">
+<%= yield  %>
+
+</div>
+
+<div id="contentsbottomw">
+<div id="contentsbottom">
+</div>
+</div>
+
+<div id="footer">
+<div id="footerleft">
+</div>
+<div id="footermiddle1">
+<p>Jeżeli nie zaznaczono inaczej, wszelkie materiały w domenie <em><b>todryk.pl</b></em> udostępniane są na licencji:</p>
+</div>
+<div id="footermiddle2">
+<p><a class="imgl" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/pl/deed.pl">
+<img alt="Creative Commons License" style="border-width: 0pt;" src="/images/cc.png" /></a></p>
+</div>
+<div id="footerright">
+</div>
+</div>
+<div id="page_info">
+<% if admin? %>
+   <%= link_to raw("<em>Carnivore</em><span> Wyloguj</span>"), logout_path, :class => "inline-button red" %>
+<% else %>
+  <%= link_to raw("<em>Carnivore</em><span> Logowanie</span>"), login_path, :class => "inline-button red" %>
+<% end %>
+<a class="inline-button blue" href="#"><em>W3C</em><span> XHTML&nbsp;1.1</span></a>
+<a class="inline-button orange" href="#"><em>W3C</em><span> CSS&nbsp;2.1</span></a>
+<a class="inline-button green" href="#"><em>Powered by</em><span> Rails</span></a>
+<br />
+<span class="aktualizacja">
+<span class="label">Aktualizacja: </span>
+<span class="time"><%= @updatetime %></span></span>
+</div>
+</div>
 </body>
 </html>
+

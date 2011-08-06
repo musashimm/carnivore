@@ -1,0 +1,42 @@
+<%= raw navigation %>
+<% content_for :title do -%>
+<% if @articlem.nil? -%>
+<%= $defaults["portal_name"] -%> - Ustaw stronę główną
+<% else -%>
+<%= $defaults["portal_name"] -%> - <%= @articlem.title -%>
+<% end -%>
+<% end -%>
+
+<div id="article">
+
+<% if admin? %>
+<p>
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Artykuły', articles_path %>
+<%= link_to 'Nowy artykuł', new_article_path %>
+<%= link_to 'Wątki', categories_path %>
+<%= link_to 'Nowy wątek', new_category_path %>
+</p>
+<% end %>
+
+<% if @articlem.nil? %>
+<div class="notice">
+Ustaw stronę główną.
+</div>
+<% else %>
+<% content_for :head do -%>
+<meta name="description" content="<%=h @articlem.news -%>"/>
+<meta name="keywords" content="<%=h @articlem.keywords -%>"/>
+<% end %>
+<% r = RedCloth.new @articlem.body %>
+<% RedClothExtension.setSubDir(@articlem.permalink) %>
+<% r.extend RedClothExtension %>
+<%= raw r.to_html %>
+<% end %>
+
+</div>
+
+<div id="news">
+	<%= render :partial => "news" ,:collection => @articlesp %>
+</div>
+

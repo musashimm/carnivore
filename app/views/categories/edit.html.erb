@@ -1,0 +1,19 @@
+<% content_for :title do -%>
+todryk.pl - Edycja wątku
+<% end -%>
+
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Artykuły', articles_path %>
+<%= link_to 'Lista wątków', categories_path %>
+
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Nazwa" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Aktualizacja" %>
+  </p>
+<% end %>

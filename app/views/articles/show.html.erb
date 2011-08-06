@@ -1,0 +1,63 @@
+<% navigation %>
+<% topics %>
+<% content_for :title do -%>
+todryk.pl - <%=h @article.title -%>
+<% end %>
+<% content_for :head do -%>
+<meta name="description" content="<%=h @article.news -%>"/>
+<meta name="keywords" content="<%=h @article.keywords -%>"/>
+<% end %>
+<div id="article">
+
+<% if admin? %>
+<%= link_to 'Strona główna', "/" %>
+<%= link_to 'Artykuły', articles_path %>
+<%= link_to 'Nowy artykuł', new_article_path %>
+<%= link_to 'Edytuj', edit_article_path(@article) %></td>
+<%= link_to 'Usuń', @article, :confirm => 'Czy aby na pewno?', :method => :delete %></td>
+<%= link_to 'Wątki', categories_path %>
+<%= link_to 'Nowy wątek', new_category_path %>
+<br /><br />
+<% end %>
+
+<h1><%= @article.title -%></h1>
+
+<% r = RedCloth.new @article.body %>
+<% RedClothExtension.setSubDir(@article.permalink) %>
+<% r.extend RedClothExtension %>
+<%= raw r.to_html %>
+
+<%= yield :topics %>
+<br />
+
+<% if @article.comentable %>
+
+<h4>Komentarze</h4>
+<div id="comments">
+<div id="users_comments">
+	<% if @article.comments.count.zero? %>
+		<p id="no_comments">Brak komentarzy.</p>
+	<% else %>
+		<p id="no_comments"></p>
+		<%= render :partial => @article.comments %>
+	<% end %>
+</div>
+<br />
+<h4>Nowy komentarz</h4>
+<% remote_form_for [@article, Comment.new] do |f| %>
+	 <% field_set_tag do %>
+	<%= f.error_messages %>
+	<%= f.label :author,"Autor (30 zn.)" %>
+    <%= f.text_field :author %><br />
+	<%= f.label :body,"Komentarz (400 zn.)" %>
+	<%= f.text_area :body, :cols => 40, :rows => 5  %><br />
+	<%= show_simple_captcha(:object=>"comment")%><br />
+  	<label>   </label><%= f.submit "Dodaj komentarz" %>
+	<% end %>
+<% end %>
+
+</div>
+
+<% end %>
+
+</div>

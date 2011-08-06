@@ -1,0 +1,4 @@
+<% div_for comment do %>
+	<strong><%= h(comment.author) %></strong> - <%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+	<p><%= h(comment.body) %></p>
+<% end %>
