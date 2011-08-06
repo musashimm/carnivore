@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'mysql2', '~> 0.2.6'
-gem 'rails', '~> 3.0.7'
+gem 'rails', '3.0.9'
 gem "RedCloth", '~> 4.2.0'
 
 # Bundle edge Rails instead:
