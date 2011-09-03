@@ -1,9 +1,10 @@
 CarnivoreNew::Application.routes.draw do
 
+  match '/articles/catcher' => 'articles#catcher'
   match 'login' => 'admin#login', :as => :login
   match 'logout' => 'admin#logout', :as => :logout
   match '/' => 'articles#main'
-  match '/index.php' => 'articles#catcher'
+  #match '/index.php' => 'articles#catcher'
   match '/main.:format' => 'articles#main'
   match '/simple_captcha/:action' => 'simple_captcha#index', :as => :simple_captcha
   resources :categories
@@ -11,7 +12,7 @@ CarnivoreNew::Application.routes.draw do
   resources :articles
   match ':permalink' => 'articles#show'
   match '/:controller(/:action(/:id))'
-  match '*path' => 'articles#catcher'
+  match '*path', :to => 'articles#catcher'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
